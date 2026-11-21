@@ -201,8 +201,8 @@ form h3{font-size:1.3rem;color:var(--navy)}
 .f .rad{display:flex;gap:18px;flex-wrap:wrap}
 .f .rad label{display:flex;align-items:center;gap:7px;font-weight:600;margin:0}
 .f .err{color:#B3261E;font-size:.78rem;margin-top:.25rem;display:none}
-.f.bad .err{display:block}
-.f.bad input,.f.bad select{border-color:#B3261E}
+.f .fld.bad .err{display:block}
+.f .fld.bad input,.f .fld.bad select,.f .fld.bad textarea{border-color:#B3261E}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;font-weight:500}
 .consent input{margin-top:.25rem}
@@ -464,7 +464,7 @@ footer .sig{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line
   <div class="sec-head"><div class="eyebrow">Destinos</div>
   <h2 class="t">Para onde a gente <em>vai</em>.</h2></div>
   <div class="dest" id="destcards"></div>
-  <div class="alertbox"><b>Vagas limitadas por grupo.</b> Datas exatas e roteiro completo são passados pelum consultor. Novos destinos serão anunciados a cada temporada.</div>
+  <div class="alertbox"><b>Vagas limitadas por grupo.</b> Datas exatas e roteiro completo são passados por um consultor. Novos destinos serão anunciados a cada temporada.</div>
  </div></section>
 
  <section id="hospedagem"><div class="wrap">
@@ -474,7 +474,7 @@ footer .sig{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line
    <div class="c"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg></div><h3>Residência estudantil</h3><p>Acomodação coletiva perto da escola, em quartos compartilhados, com convivência com estudantes de outros países.</p></div>
    <div class="c"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14c3 0 5 2 5 5"/></svg></div><h3>Com o grupo Jinas</h3><p>O grupo todo no mesmo lugar, com os líderes por perto. É a opção mais indicada para quem é menor de idade.</p></div>
   </div>
-  <p class="small">A modalidade de hospedagem de cada temporada é confirmada pelum consultor.</p>
+  <p class="small">A modalidade de hospedagem de cada temporada é confirmada por um consultor.</p>
  </div></section>
 
  <div class="strip"><div class="wrap in"><p>Não sabe qual destino combina com você? Vem conversar com a gente.</p><a class="btn" href="https://wa.me/5513997915105">Falar com um consultor</a></div></div>
@@ -582,7 +582,7 @@ footer .sig{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line
    <div class="fld"><label for="f-msg">Mensagem (opcional)</label><textarea id="f-msg" rows="3" placeholder="Conte o que você quer saber"></textarea></div>
    <label class="consent fld"><input type="checkbox" id="f-ok"><span>Autorizo o contato da equipe Jinas pelo WhatsApp e e-mail informados.</span></label><div class="err" id="e-ok" style="margin-top:-8px">Marque a autorização para continuar.</div>
    <button class="btn" type="submit">Quero falar com um consultor</button>
-   <div class="result" id="result" role="status"><b>Mensagem pronta.</b> Este site não guarda dados. Toque no botão para enviar a mensagem ao consultor pelo WhatsApp.
+   <div class="result" id="result" role="status"><b>Abrimos o WhatsApp com a sua mensagem.</b> Se o aplicativo não abrir sozinho, toque no botão abaixo. Este site não guarda dados.
     <textarea id="msgtxt" readonly aria-label="Mensagem pronta"></textarea>
     <div class="btns" style="margin-top:0"><a class="btn" id="wlink" href="#" style="background:#25D366">Abrir o WhatsApp</a><button type="button" class="btn ghost dk" id="copybtn">Copiar mensagem</button></div></div>
   </form>

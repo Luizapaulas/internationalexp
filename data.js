@@ -36,7 +36,7 @@ window.HOMEFAQ=[
  ['Preciso ser aluno da Jinas School para viajar?','Não. Os programas são abertos a quem se identifica com os valores da experiência. Alunos da School têm condição diferenciada no pagamento.'],
  ['Como são as turmas e a carga horária das aulas?','Depende da escola de cada destino. As aulas são intensivas, em turmas pequenas e com alunos de vários países. Os detalhes estão na página de cada destino.'],
  ['A escola dá certificado no final?','Sim. Cada escola parceira emite certificado conforme os requisitos próprios, com a carga horária cursada.'],
- ['Onde eu vou ficar hospedado?','Pode ser casa de família, residência estudantil ou hospedagem do grupo. A modalidade de cada temporada é confirmada pelum consultor.'],
+ ['Onde eu vou ficar hospedado?','Pode ser casa de família, residência estudantil ou hospedagem do grupo. A modalidade de cada temporada é confirmada por um consultor.'],
  ['Como funciona o acompanhamento durante a viagem?','Líderes Jinas acompanham o grupo do embarque ao retorno, com canal direto e atualizações constantes para as famílias.'],
  ['Quanto custa e como posso pagar?','Os valores e o parcelamento de cada destino estão na página dele. Um consultor explica as condições para o seu caso.'],
  ['Como funciona o processo seletivo?','Antes da matrícula, todo candidato conversa com a direção. Queremos entender os objetivos de cada um com a viagem. A participação depende dessa conversa.'],

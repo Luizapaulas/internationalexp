@@ -53,7 +53,7 @@ function destPage(d){
  h+='<section class="bg-soft"><div class="wrap"><div class="eyebrow">O propósito</div><h2 class="t">'+p.title+'</h2>'+(p.intro?'<p class="lead">'+p.intro+'</p>':'')+'<div class="two-col">'+p.cards.map(function(x,i){return '<div class="pcard '+(i?'s':'n')+'"><h3>'+x[0]+'</h3><p>'+x[1]+'</p></div>'}).join('')+'</div><div class="fam"><h3>'+f.title+'</h3><p>'+f.intro+'</p><div class="famlist">'+f.items.map(function(i){return '<div><b>'+i[0]+'</b> '+i[1]+'</div>'}).join('')+'</div></div></div></section>';
  h+='<section id="incluido"><div class="wrap"><div class="eyebrow">O pacote</div><h2 class="t">O que está <em>incluído</em>.</h2>';
  if(d.mods)h+='<div class="mods">'+d.mods.map(function(m){return '<div class="mod"><h3>'+m[0]+'<small>'+m[1]+'</small></h3><p>'+m[2]+'</p>'+(m[3]?'<div class="al">'+m[3]+'</div>':'')+'</div>'}).join('')+'</div>';
- h+='<div class="inc"><div class="col"><h3>Está incluído</h3><ul>'+d.inc.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div class="col no"><h3>Não está incluído</h3><ul>'+d.exc.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div><div class="alertbox"><b>Divisão de quartos.</b> '+d.quartos+'</div><div class="alertbox" style="margin-top:12px"><b>Vagas limitadas por grupo.</b> Datas exatas e roteiro completo são passados pelum consultor.</div></div></section>';
+ h+='<div class="inc"><div class="col"><h3>Está incluído</h3><ul>'+d.inc.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div class="col no"><h3>Não está incluído</h3><ul>'+d.exc.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div><div class="alertbox"><b>Divisão de quartos.</b> '+d.quartos+'</div><div class="alertbox" style="margin-top:12px"><b>Vagas limitadas por grupo.</b> Datas exatas e roteiro completo são passados por um consultor.</div></div></section>';
  h+='<section class="bg-soft"><div class="wrap"><div class="eyebrow">Dúvidas frequentes</div><h2 class="t">As perguntas <em>mais frequentes</em>.</h2><div class="faq" style="margin-top:2rem">'+faqHtml(d.faq)+'</div></div></section>';
  h+='<section id="investimento"><div class="wrap"><div class="eyebrow">Investimento</div><h2 class="t">Quanto custa <em>e como pagar</em>.</h2>';
  if(d.invest==='proposta'){
@@ -139,8 +139,10 @@ $('#form').addEventListener('submit',function(ev){ev.preventDefault();checkResp(
  if(!$('#resp').hidden)m+='\nResponsável: '+f.resp.value.trim();
  if($('#f-como').value)m+='\nComo conheceu a Jinas: '+$('#f-como').value;
  if($('#f-msg').value.trim())m+='\nMensagem: '+$('#f-msg').value.trim();
- $('#msgtxt').value=m;$('#wlink').href='https://wa.me/5513997915105?text='+encodeURIComponent(m);
+ $('#msgtxt').value=m;var url='https://wa.me/5513997915105?text='+encodeURIComponent(m);
+ var wl=$('#wlink');wl.href=url;wl.target='_blank';wl.rel='noopener';
  $('#result').classList.add('on');$('#result').scrollIntoView({block:'center'});
+ try{wl.click()}catch(e){}
 });
 $('#copybtn').onclick=function(){var t=$('#msgtxt');t.select();var b=this;try{navigator.clipboard.writeText(t.value).then(function(){b.textContent='Copiado'},function(){document.execCommand&&document.execCommand('copy');b.textContent='Copiado'})}catch(e){try{document.execCommand('copy');b.textContent='Copiado'}catch(_){}}};
 })();
