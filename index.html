@@ -110,7 +110,7 @@ main{padding-top:68px}
 .mv h3{font-size:1.3rem;color:var(--navy);margin-bottom:.5rem}
 .mv p{color:#3A4066}
 /* DESTINO CARDS (home) */
-.dest{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.dest{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .dcard{background:transparent;color:var(--ink);display:flex;flex-direction:column}
 .dcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
 .dcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
@@ -291,6 +291,7 @@ form h3{font-size:1.3rem;color:var(--navy)}
 .mod .al{background:var(--osoft);padding:10px 22px;font-size:.82rem;color:#A33E1C;font-weight:600}
 /* INVEST */
 .invgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:1.8rem}
+.invgrid.tri{grid-template-columns:repeat(3,1fr)}
 .ib2{border-radius:6px;padding:26px}
 .ib2.a{background:var(--navy);color:#fff}
 .ib2.b{background:var(--yellow);color:var(--navy)}
@@ -416,7 +417,7 @@ footer .sig{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line
     <h1>Você vai estudar o idioma, conhecer a cultura de perto e servir pessoas de verdade.</h1>
     <p class="l">É estudar de manhã, conhecer a cidade à tarde e, no meio disso tudo, ajudar quem precisa. A gente vai junto com você, do primeiro encontro até a volta para casa.</p>
     <div class="btns"><a class="btn" href="#formulario">Quero participar</a><a class="btn ghost" href="#destinos">Ver os destinos</a></div>
-    <div class="seasons"><a href="#chile"><b>Chile</b><span>Julho de 2027</span></a><a href="#inglaterra"><b>Inglaterra</b><span>Dezembro de 2027</span></a><a href="#malta"><b>Malta</b><span>Julho de 2028</span></a></div>
+    <div class="seasons"><a href="#chile"><b>Chile</b><span>Julho de 2027</span></a><a href="#inglaterra"><b>Inglaterra</b><span>Dezembro de 2027</span></a><a href="#malta"><b>Malta</b><span>Julho de 2028</span></a><a href="#paris"><b>Paris</b><span>Dezembro de 2028</span></a></div>
    </div>
    <div class="collage" aria-hidden="true">
     <figure class="c1"><img src="img/chile-laguna-del-inca.jpg" alt=""><figcaption>Chile</figcaption></figure>
@@ -427,7 +428,7 @@ footer .sig{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line
   </div>
   <div class="herofoot"></div>
  </div>
- <div class="databar"><div class="wrap"><p class="line">Três viagens abertas, de duas semanas cada: <b>Chile em julho de 2027</b>, <b>Inglaterra em dezembro de 2027</b> e <b>Malta em julho de 2028</b>. Para quem tem 14 anos ou mais, do iniciante ao avançado. Os valores estão na página de cada destino.</p></div></div>
+ <div class="databar"><div class="wrap"><p class="line">Quatro viagens abertas: <b>Chile em julho de 2027</b>, <b>Inglaterra em dezembro de 2027</b>, <b>Malta em julho de 2028</b> e <b>Paris em dezembro de 2028</b>. Para quem tem 14 anos ou mais, do iniciante ao avançado. Os valores estão na página de cada destino.</p></div></div>
 
  <section id="quem-somos"><div class="wrap">
   <div class="story">
@@ -574,7 +575,7 @@ footer .sig{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line
     <div class="fld"><label for="f-cid">Cidade e estado</label><input type="text" id="f-cid" required><div class="err">Informe sua cidade.</div></div>
     <div class="fld"><label for="f-idade">Idade do participante</label><input type="number" id="f-idade" min="10" max="99" required><div class="err">Informe a idade.</div></div>
    </div>
-   <div class="fld"><label for="f-dest">Destino de interesse</label><select id="f-dest" required><option value="">Escolha</option><option>Chile, julho de 2027</option><option>Inglaterra, dezembro de 2027</option><option>Malta, julho de 2028</option><option>Mais de um destino</option><option>Ainda não sei</option></select><div class="err">Escolha um destino.</div></div>
+   <div class="fld"><label for="f-dest">Destino de interesse</label><select id="f-dest" required><option value="">Escolha</option><option>Chile, julho de 2027</option><option>Inglaterra, dezembro de 2027</option><option>Malta, julho de 2028</option><option>Paris, dezembro de 2028</option><option>Mais de um destino</option><option>Ainda não sei</option></select><div class="err">Escolha um destino.</div></div>
    <fieldset class="fld"><legend>Você é aluno da Jinas School?</legend><div class="rad"><label><input type="radio" name="aluno" value="Sim"> Sim</label><label><input type="radio" name="aluno" value="Não"> Não</label></div><div class="err">Escolha uma opção.</div></fieldset>
    <fieldset class="fld"><legend>Quem está preenchendo?</legend><div class="rad"><label><input type="radio" name="quem" value="O próprio participante"> O próprio participante</label><label><input type="radio" name="quem" value="Pai, mãe ou responsável"> Pai, mãe ou responsável</label></div><div class="err">Escolha uma opção.</div></fieldset>
    <div class="fld" id="resp" hidden><label for="f-resp">Nome do responsável</label><input type="text" id="f-resp"><div class="err">Informe o nome do responsável.</div></div>

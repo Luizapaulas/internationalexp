@@ -4,7 +4,7 @@ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 function faqHtml(list){return list.map(function(q){return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'}).join('')}
 
 /* HOME */
-$('#destcards').innerHTML=['chile','inglaterra','malta'].map(function(k){var d=D[k];
+$('#destcards').innerHTML=['chile','inglaterra','malta','paris'].map(function(k){var d=D[k];
  return '<article class="dcard"><div class="ph"><img src="'+d.card+'" alt="" loading="lazy" style="object-position:'+(d.cardPos||'50% 50%')+'"><span class="badge">'+d.pill.charAt(0)+d.pill.slice(1).toLowerCase()+'</span></div><div class="b"><small>'+d.cont+'</small><h3>'+d.name+'</h3><p>'+d.sum+'</p><div class="q">'+d.quick.map(function(x){return '<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>'}).join('')+'</div><a class="btn go" href="#'+k+'">Conhecer o destino</a></div></article>'}).join('');
 $('#difgrid').innerHTML=window.DIF.map(function(x,i){return '<div class="c">'+ico(x[0],x[3])+'<span class="big">0'+(i+1)+'</span><h3>'+x[1]+'</h3><p>'+x[2]+'</p></div>'}).join('');
 $('#homefaq').innerHTML=faqHtml(window.HOMEFAQ);
@@ -58,6 +58,16 @@ function destPage(d){
  h+='<section id="investimento"><div class="wrap"><div class="eyebrow">Investimento</div><h2 class="t">Quanto custa <em>e como pagar</em>.</h2>';
  if(d.invest==='proposta'){
   h+='<div class="invgrid"><div class="ib2 a"><small style="color:var(--yellow)">Individual</small><h3>Valores sob consulta</h3><p>Um consultor apresenta a proposta com valores e condições do seu perfil.</p><a class="btn" href="#formulario" data-form="'+d.form+'">Pedir proposta</a></div><div class="ib2 b"><small>Condição grupo</small><h3>Desconto por participante</h3><p>Na contratação conjunta de três ou mais intercambistas, cada participante tem desconto.</p><a class="btn" href="#formulario" data-form="'+d.form+'">Pedir proposta</a></div></div>';
+  h+='<table class="cond"><thead><tr><th>Condição</th><th>Como funciona</th></tr></thead><tbody>'+d.cond.map(function(x){return '<tr><td>'+x[0]+'</td><td>'+x[1]+'</td></tr>'}).join('')+'</tbody></table>';
+ }else if(d.invest==='multi'){
+  var pcs=d.price.pacotes,sc=d.price.sched;
+  h+='<p class="lead">'+d.price.nota+'</p><div class="invgrid tri" style="margin-top:1.4rem">'+pcs.map(function(p,i){
+   return '<div class="ib2 '+(i===pcs.length-1?'a':'b')+'"><small>'+p[0]+'</small><h3>'+brl(p[1])+'</h3><p>'+p[2]+'</p><a class="btn" href="#formulario" data-form="'+d.form+'">Quero garantir minha vaga</a></div>'}).join('')+'</div>';
+  var rows=[],y=sc.start[0],m=sc.start[1];
+  var now=new Date();if(now.getFullYear()*12+now.getMonth()>y*12+(m-1)){y=now.getFullYear();m=now.getMonth()+1}
+  while(rows.length<10){var n=(sc.end[0]-y)*12+(sc.end[1]-m)+1;if(n<1)break;var nn=Math.min(n,sc.max);
+   rows.push([MES[m-1]+'/'+y,nn,pcs.map(function(p){return brl(Math.floor(p[1]*100/nn)/100)})]);m++;if(m>12){m=1;y++}}
+  h+='<div class="tablewrap" style="margin-top:1.4rem"><table><thead><tr><th>Mês da inscrição</th><th>Parcelas</th>'+pcs.map(function(p){return '<th>'+p[0]+'</th>'}).join('')+'</tr></thead><tbody>'+rows.map(function(r,i){return '<tr'+(i===0?' class="hl"':'')+'><td>'+r[0]+'</td><td>'+r[1]+'x</td>'+r[2].map(function(v){return '<td>'+v+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div><p class="small">A última parcela vence em novembro de 2028, antes do embarque. Centavos de diferença são ajustados na última parcela.</p>';
   h+='<table class="cond"><thead><tr><th>Condição</th><th>Como funciona</th></tr></thead><tbody>'+d.cond.map(function(x){return '<tr><td>'+x[0]+'</td><td>'+x[1]+'</td></tr>'}).join('')+'</tbody></table>';
  }else if(d.invest==='preco'){
   var pr=d.price,sc=pr.sched;
